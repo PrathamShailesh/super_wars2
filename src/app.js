@@ -34,8 +34,9 @@ const initPlayers = (players) => {
         };
         detailedPlayers.push(player);
     }
-        console.log(heroes)
+        // console.log(heroes)
     return detailedPlayers
+    // return players
 }
 
 
@@ -55,14 +56,14 @@ const buildPlayers = (players, type) => {
     // Type your code here
     for (let i = 0; i < players.length; i++) {
         fragment += `<div class="player">
-            <img src="${players[i].image}">
-            <div class="details">
+            <img src="${players[i].image}" alt="">
+            
                 <div class="name">${players[i].name}</div>
                 <div class="strength">${players[i].strength}</div>
-            </div>
+
         </div>`;
     }
-    console.log(fragment)
+    // console.log(fragment)
 
 
     return fragment;
@@ -72,7 +73,7 @@ const viewPlayers = (players) => {
     const heroesContainer = document.getElementById('heroes');
     const villainsContainer = document.getElementById('villains');
 
-    const heroes = players.filter(player => player.type === 'hero');
+    const heroes = players.filter(player => player.type === 'hero')
     const villains = players.filter(player => player.type === 'villain');
 
     heroesContainer.innerHTML = buildPlayers(heroes);
